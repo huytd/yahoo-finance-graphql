@@ -117,5 +117,5 @@ type Query {
   # Return the list of historical data for a symbol
   historicalData(symbol: String, from: String, to: String, interval: String): [Historical]
   # List trending symbols
-  trendingSymbols(count: Int, withQuote: Boolean): [TrendingSymbol]
+  trendingSymbols(count: Int): [TrendingSymbol]
 }
