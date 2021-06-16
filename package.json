@@ -1,0 +1,16 @@
+{
+  "name": "yahooql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.0",
+    "graphql-tools": "^7.0.5",
+    "yahoo-finance2": "^1.13.1"
+  }
+}
