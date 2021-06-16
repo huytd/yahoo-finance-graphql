@@ -14,130 +14,161 @@ Examples:
 **Get historical data since 01/01/2021:**
 
 <table>
-  <tr><td>**Query**</td><td>**Response**</td></tr>
-  <tr>
-    <td>
-    ```
-    query {
-      historicalData(
-        symbol: "IBM"
-        from: "2021-01-01"
-        to: ""
-        interval: "1d"
-      ) {
-        open
-        close
-        high
-        low
-      }
-    }
-    ```
-    </td>
-    <td>
-    ```
+<tr><td>**Query**</td><td>**Response**</td></tr>
+<tr>
+<td>
 
-    ```
-    </td>
-  </tr>
+```
+query {
+  historicalData(
+    symbol: "IBM"
+    from: "2021-01-01"
+    to: ""
+    interval: "1d"
+  ) {
+    open
+    close
+    high
+    low
+  }
+}
+```
+
+</td>
+<td>
+
+```
+{
+
+  "data": {
+    "historicalData": [
+      {
+        "open": 125.849998,
+        "close": 123.940002,
+        "high": 125.919998,
+        "low": 123.040001
+      },
+      {
+        "open": 125.010002,
+        "close": 126.139999,
+        "high": 126.68,
+        "low": 124.610001
+      },
+      ...
+    ]
+  }
+}
+```
+
+</td>
+</tr>
 </table>
 
 **Get top 10 trending symbols with quote:**
 
 <table>
-  <tr><td>**Query**</td><td>**Response**</td></tr>
-  <tr>
-    <td>
-    ```
-    query {
-      trendingSymbols(count: 3) {
-        symbol,
-        quote {
-          displayName,
-          regularMarketPrice,
-          regularMarketChange,
-          regularMarketChangePercent
+<tr><td>**Query**</td><td>**Response**</td></tr>
+<tr>
+<td>
+
+```
+query {
+  trendingSymbols(count: 3) {
+    symbol,
+    quote {
+      displayName,
+      regularMarketPrice,
+      regularMarketChange,
+      regularMarketChangePercent
+    }
+  }
+}
+```
+
+</td>
+<td>
+
+```
+{
+  "data": {
+    "trendingSymbols": [
+      {
+        "symbol": "ORPH",
+        "quote": {
+          "displayName": null,
+          "regularMarketPrice": 16.21,
+          "regularMarketChange": 6.159999,
+          "regularMarketChangePercent": 61.293518
+        }
+      },
+      {
+        "symbol": "CVAC",
+        "quote": {
+          "displayName": "CureVac",
+          "regularMarketPrice": 94.79,
+          "regularMarketChange": -3.409996,
+          "regularMarketChangePercent": -3.472501
+        }
+      },
+      {
+        "symbol": "VINO",
+        "quote": {
+          "displayName": "Gaucho",
+          "regularMarketPrice": 7.98,
+          "regularMarketChange": 3.8899999,
+          "regularMarketChangePercent": 95.110016
         }
       }
-    }
-    ```
-    </td>
-    <td>
-    ```
-    {
-      "data": {
-        "trendingSymbols": [
-          {
-            "symbol": "ORPH",
-            "quote": {
-              "displayName": null,
-              "regularMarketPrice": 16.21,
-              "regularMarketChange": 6.159999,
-              "regularMarketChangePercent": 61.293518
-            }
-          },
-          {
-            "symbol": "CVAC",
-            "quote": {
-              "displayName": "CureVac",
-              "regularMarketPrice": 94.79,
-              "regularMarketChange": -3.409996,
-              "regularMarketChangePercent": -3.472501
-            }
-          },
-          {
-            "symbol": "VINO",
-            "quote": {
-              "displayName": "Gaucho",
-              "regularMarketPrice": 7.98,
-              "regularMarketChange": 3.8899999,
-              "regularMarketChangePercent": 95.110016
-            }
-          }
-        ]
-      }
-    }
-    ```
-    </td>
-  </tr>
+    ]
+  }
+}
+```
+
+</td>
+</tr>
 </table>
 
 **Auto complete stock's symbol:**
 
 <table>
-  <tr><td>**Query**</td><td>**Response**</td></tr>
-  <tr>
-    <td>
-    ```
-    query {
-      autoComplete(query: "IB") {
-        symbol
-        name
-      }
-    }
-    ```
-    </td>
-    <td>
-    ```
-    {
-      "data": {
-        "autoComplete": [
-          {
-            "symbol": "IBBQ",
-            "name": "Invesco Nasdaq Biotechnology ETF"
-          },
-          {
-            "symbol": "IBM",
-            "name": "International Business Machines Corporation"
-          },
-          {
-            "symbol": "IBIO",
-            "name": "iBio, Inc."
-          },
-          ...
-        ]
-      }
-    }
-    ```
-    </td>
-  </tr>
+<tr><td>**Query**</td><td>**Response**</td></tr>
+<tr>
+<td>
+
+```
+query {
+  autoComplete(query: "IB") {
+    symbol
+    name
+  }
+}
+```
+
+</td>
+<td>
+
+```
+{
+  "data": {
+    "autoComplete": [
+      {
+        "symbol": "IBBQ",
+        "name": "Invesco Nasdaq Biotechnology ETF"
+      },
+      {
+        "symbol": "IBM",
+        "name": "International Business Machines Corporation"
+      },
+      {
+        "symbol": "IBIO",
+        "name": "iBio, Inc."
+      },
+      ...
+    ]
+  }
+}
+```
+
+</td>
+</tr>
 </table>
