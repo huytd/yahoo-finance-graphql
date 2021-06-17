@@ -2,6 +2,8 @@
 
 A GraphQL API for fetching data from Yahoo Finance, thanks to [node-yahoo-finance2](https://github.com/gadicc/node-yahoo-finance2/).
 
+Online Demo: https://yahoo-finance-graphql.herokuapp.com/
+
 Available APIs:
 
 - [quote](https://github.com/gadicc/node-yahoo-finance2/blob/devel/docs/modules/quote.md)
@@ -9,12 +11,22 @@ Available APIs:
 - [trendingSymbols](https://github.com/gadicc/node-yahoo-finance2/blob/devel/docs/modules/trendingSymbols.md)
 - [historical](https://github.com/gadicc/node-yahoo-finance2/blob/devel/docs/modules/historical.md)
 
-Examples:
+## How to use
+
+Run the GraphQL server with the following command:
+
+```
+$ yarn install
+
+$ yarn start
+```
+
+## Examples
 
 **Get historical data since 01/01/2021:**
 
 <table>
-<tr><td>**Query**</td><td>**Response**</td></tr>
+<tr><td><b>Query</b></td><td><b>Response</b></td></tr>
 <tr>
 <td>
 
@@ -67,7 +79,7 @@ query {
 **Get top 10 trending symbols with quote:**
 
 <table>
-<tr><td>**Query**</td><td>**Response**</td></tr>
+<tr><td><b>Query</b></td><td><b>Response</b></td></tr>
 <tr>
 <td>
 
@@ -131,7 +143,7 @@ query {
 **Auto complete stock's symbol:**
 
 <table>
-<tr><td>**Query**</td><td>**Response**</td></tr>
+<tr><td><b>Query</b></td><td><b>Response</b></td></tr>
 <tr>
 <td>
 
