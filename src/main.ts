@@ -7,6 +7,7 @@ const typeDefs = gql(readFileSync(path.resolve(__dirname, 'schema.graphql')).toS
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true,
   playground: true
 });
 
