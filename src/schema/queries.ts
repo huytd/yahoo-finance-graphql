@@ -1,4 +1,14 @@
-import { DataService } from './service';
+import { gql } from "apollo-server"
+import { DataService } from "../service";
+
+export const typeDef = gql`
+  type Query {
+    quote(symbol: String): Quote
+    autoComplete(query: String): [AutoCompelete]
+    historicalData(symbol: String, from: String, to: String, interval: String): [Historical]
+    trendingSymbols(count: Int): [TrendingSymbol]
+  }
+`;
 
 export const resolvers = {
   Query: {
@@ -17,13 +27,6 @@ export const resolvers = {
       count: number
     }) => {
       return await DataService.trendingSymbols(args.count);
-    }
-  },
-  TrendingSymbol: {
-    quote: async (args: {
-      symbol: string
-    }) => {
-      return await DataService.getQuote(args.symbol);
     }
   }
 };
